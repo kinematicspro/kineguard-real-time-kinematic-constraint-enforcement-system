@@ -1,1 +1,0 @@
-# kinguard-ai-rehabilitation-system
