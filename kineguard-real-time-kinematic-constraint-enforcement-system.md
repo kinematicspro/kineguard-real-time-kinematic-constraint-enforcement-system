@@ -499,7 +499,7 @@ kinematicspro/
 │       │
 │       └── images/
 │           │
-│           └── kineguard/
+│           └── kineguard-real-time-kinematic-constraint-enforcement-system/
 │               │
 │               ├── kineguard-cover.png
 │               ├── system-architecture.png
@@ -508,8 +508,7 @@ kinematicspro/
 │               ├── live-demo.png
 │               ├── threshold-warning.png
 │               ├── gesture-calibration.png
-│               ├── fatigue-detection.png
-│               └── bmp180-monitoring.png
+
 ```
 
 ---
