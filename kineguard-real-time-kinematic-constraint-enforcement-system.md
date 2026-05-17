@@ -5,7 +5,7 @@ title: kineguard: Real-Time Kinematic Constraint Enforcement System
 
 excerpt: A predictive edge-AI wearable rehabilitation system that prevents unsafe joint movement using real-time sensor fusion, DSP, and adaptive biomechanical intelligence.
 
-image: <img width="1070" height="1280" alt="kineguard-cover-image" src="https://github.com/user-attachments/assets/9a953c11-35f9-4a08-8eec-771c918d448c" />
+image: assets/images/kineguard-real-time-kinematic-constraint-enforcement-system/kineguard-cover-image.png
 
 
 tags:
