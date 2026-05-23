@@ -161,22 +161,24 @@ The MPU6050 IMU sensor provides raw accelerometer and gyroscope data which is pr
 kineguard dynamically tightens rehabilitation safety limits based on real-time angular velocity and biomechanical momentum.
 
 ```cpp
-// Normalize angular velocity
+// Normalize velocity
 float normalizedVelocity =
-    constrain(velocity / 140.0, 0, 1);
+    constrain(velocity / 250.0, 0.0, 1.0);
 
-// Nonlinear velocity-aware penalty
-float velocityPenalty =
-    18.0 * pow(normalizedVelocity, 1.35);
+// Nonlinear threshold reduction
+float adaptiveReduction =
+    pow(normalizedVelocity, 1.8) * 25.0;
 
-// Adaptive predictive threshold
+// Smooth threshold transition
 dynamicThreshold =
-    targetROM - velocityPenalty;
+    0.85 * dynamicThreshold
+    +
+    0.15 * (targetROM - adaptiveReduction);
 
 // Safety constraints
 dynamicThreshold =
     constrain(dynamicThreshold,
-              targetROM - 22,
+              targetROM * 0.55,
               targetROM);
 ```
 
@@ -552,28 +554,10 @@ This predictive protection mechanism tightens safety boundaries during rapid mov
 kineguard continuously evaluates rehabilitation safety using a weighted biomechanical risk model.
 
 ```cpp
-float angleRisk =
-    constrain(
-      abs(filteredAngle)
-      / dynamicThreshold,
-      0,
-      1
-    );
-
-float velocityRisk =
-    pow(
-      constrain(
-        velocity / 120.0,
-        0,
-        1
-      ),
-      1.5
-    );
-
 riskScore =
-    0.65 * angleRisk
+    0.7 * (abs(filteredAngle) / dynamicThreshold)
     +
-    0.35 * velocityRisk;
+    0.3 * (constrain(velocity / 300.0, 0, 1));
 ```
 
 The system combines:
@@ -590,12 +574,8 @@ to generate a real-time biomechanical risk estimate.
 The fatigue detection engine analyzes high-frequency oscillations in gyroscopic motion data.
 
 ```cpp
-if(
-   tremorFrequency >= 3.5 &&
-   tremorFrequency <= 8.0 &&
-   velocity < 28 &&
-   abs(filteredAngle) > 45
-) {
+if(tremorFrequency >= 2.0 &&
+   tremorFrequency <= 15.0) {
 
     fatigueDetected = true;
 
