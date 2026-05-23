@@ -104,7 +104,7 @@ kineguard acts as an intelligent wearable rehabilitation assistant capable of pr
 
 ### Images
 
-<!-- Replace placeholder image paths with your actual images -->
+
 
 <p align="center">
   <img src="assets/images/kineguard-real-time-kinematic-constraint-enforcement-system/kineguard-cover-image.png" width="800"><br/>
@@ -129,7 +129,7 @@ kineguard acts as an intelligent wearable rehabilitation assistant capable of pr
 
 ### Videos
 
-<!-- Replace placeholder video file with your actual demo video -->
+
 
 <video controls width="100%">
   <source src="/kineguard-demo.mp4" type="video/mp4">
