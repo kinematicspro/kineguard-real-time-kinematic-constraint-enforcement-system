@@ -129,10 +129,16 @@ kineguard acts as an intelligent wearable rehabilitation assistant capable of pr
 
 ### Videos
 
-
+## Project presentation
 
 <video controls width="100%">
-  <source src="/kineguard-demo.mp4" type="video/mp4">
+  <source src="kineguard project presentation.mp4" type="video/mp4">
+</video>
+
+## Project Demosntration
+
+<video controls width="100%">
+  <source src="./kineguard project demostration.mp4" type="video/mp4">
 </video>
 
 ---
